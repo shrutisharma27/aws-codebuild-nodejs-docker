@@ -8,7 +8,7 @@ phases:
       - unzip awscliv2.zip 
       - ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
       - aws --version
-      - aws ecr get-login-password | docker login  --password-stdin  --username AWS "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME"
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 897708493501.dkr.ecr.ap-south-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
